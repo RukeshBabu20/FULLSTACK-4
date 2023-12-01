@@ -28,7 +28,7 @@ export const showData = async (
   try {
     const result = await Service.showService();
     if (result) {
-      res.status(200).json({ message: "Your data", result });
+      res.status(200).json(result);
     } else {
       res.status(204).json({ message: "Data not found" });
     }
@@ -47,7 +47,7 @@ export const showIdData = async (
   try {
     const result = await Service.showIdService(id);
     if (result) {
-      res.status(200).json({ message: "Your Data", result });
+      res.status(200).json(result);
     } else {
       res.status(204).json({ message: "No data found" });
     }
@@ -66,9 +66,8 @@ export const updateData = async (
 
   try {
     const result = await Service.updateService(id, updateData);
-    console.log(result);
     if (result) {
-      res.status(200).json({ message: "Your Data updated", result });
+      res.status(200).json(result);
     } else {
       res.status(204).json({ message: "Cannot find the update record" });
     }
