@@ -13,7 +13,7 @@ const customerSchema: Schema<bankType> = new mongoose.Schema({
   account: {
     type: Number,
     required: true,
-    unique: true,
+    // unique: true,
   },
   ifsc: {
     type: String,

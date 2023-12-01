@@ -62,10 +62,11 @@ export const updateData = async (
   next: NextFunction
 ) => {
   const { id } = req.params;
-  const data = req.body;
+  const updateData = req.body;
 
   try {
-    const result = await Service.updateService(id, data);
+    const result = await Service.updateService(id, updateData);
+    console.log(result);
     if (result) {
       res.status(200).json({ message: "Your Data updated", result });
     } else {
